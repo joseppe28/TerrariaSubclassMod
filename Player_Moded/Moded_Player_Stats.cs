@@ -18,7 +18,8 @@ public partial class Moded_Player_Stats : ModPlayer
     // Barbarian subclass stats
     private float max_rage = 100f;
     private float current_rage = 0f;
-    private const float rageLostPerSecond = 2f;
+    private float rageAddedOnHit = 10f;
+    private const float rageLostPerSecondPercent = 2f;
 
 
     // Barbarian subclass methods
@@ -44,6 +45,16 @@ public partial class Moded_Player_Stats : ModPlayer
 
 
     // General methods and Getters / Setters for subclasses
+    public float getRageAddedOnHit()
+    {
+        return rageAddedOnHit;
+    }
+
+    public void setRageAddedOnHit(float value)
+    {
+        rageAddedOnHit = value;
+    }
+
 
     public override void PostUpdateEquips()
     {
@@ -54,7 +65,7 @@ public partial class Moded_Player_Stats : ModPlayer
     {
         if (subclass == Subclasses.Barbarian)
         {
-            reduceRage(rageLostPerSecond / 60f);
+            reduceRage(this.current_rage * rageLostPerSecondPercent / 100f / 60f);
         }
     }
 
@@ -62,7 +73,7 @@ public partial class Moded_Player_Stats : ModPlayer
     {
         if (subclass == Subclasses.Barbarian)
         {
-            reduceRage(10f); // Reduce rage by 10 when the player is hurt
+            reduceRage(this.current_rage * 0.1f); // Reduce rage by 10% when the player is hurt
         }
     }
 

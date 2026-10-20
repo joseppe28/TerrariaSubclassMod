@@ -66,7 +66,8 @@ namespace Content.Melee_Subclasses.Tank
             {
                 if(player.GetModPlayer<Moded_Player_Stats>().getSubclass() == Subclasses.Barbarian)
                 {
-                    player.GetModPlayer<Moded_Player_Stats>().addRage(1); // Increase rage by 1 on hit
+                    float rageadded = player.GetModPlayer<Moded_Player_Stats>().getRageAddedOnHit();
+                    player.GetModPlayer<Moded_Player_Stats>().addRage(rageadded); // Increase rage by 1 on hit
                 }
             }
         }
