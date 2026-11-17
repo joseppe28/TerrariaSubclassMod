@@ -4,7 +4,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Content.Player_Moded;
 
-namespace Content.Melee_Subclasses.Tank.armor.TestSet;
+namespace Content.Melee_Subclasses.Barbarian.armor.TestSet;
 
 [AutoloadEquip(EquipType.Head)]
 public class Test_Helmet : ModItem
@@ -38,7 +38,9 @@ public class Test_Helmet : ModItem
     public override void UpdateArmorSet(Player player)
     {
         player.setBonus = "Barbarian mode active and +25% more melee damage";
-        player.GetModPlayer<Moded_Player_Stats>().setSubclass(Subclasses.Barbarian);
+        player.GetModPlayer<Moded_Player_Stats>().Subclass = Subclasses.Barbarian;
         player.GetModPlayer<Moded_Player_Stats>().addSubclassStatValue(Subclasses.Barbarian, 0.25f);
+        player.GetModPlayer<Moded_Player_Stats>().MaxRage = 30f;
+        player.GetModPlayer<Moded_Player_Stats>().RageAddedOnHitBonus = 10f;
     }
 }

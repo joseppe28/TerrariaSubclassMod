@@ -3,14 +3,13 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Content.Melee_Subclasses.Tank.armor.TestSet;
+namespace Content.Melee_Subclasses.Barbarian.armor.TestSet;
 
-
-[AutoloadEquip(EquipType.Legs)]
-public class Test_Leggings : ModItem
+[AutoloadEquip(EquipType.Body)]
+public class Test_Chestplate : ModItem
 {
     public override string Texture =>
-        $"Terraria/Images/Item_{ItemID.IronGreaves}";
+        $"Terraria/Images/Item_{ItemID.IronChainmail}";
 
     public override void SetDefaults()
     {

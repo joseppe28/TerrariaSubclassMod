@@ -1,13 +1,13 @@
 using Terraria;
 using Terraria.ModLoader;
 
-namespace Content.Melee_Subclasses.Tank
+namespace Content.Melee_Subclasses.Barbarian
 {
     public class ThrownTestSword : ModProjectile
     {
         // Reuse your sword's texture.
         public override string Texture =>
-            "TestMod/Content/Melee_Subclasses/Tank/test:sword";
+            "Eventide/Content/Melee_Subclasses/Barbarian/test_sword";
 
         public override void SetDefaults()
         {
