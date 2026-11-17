@@ -19,8 +19,10 @@ public sealed class WeaponRegistrySystem : ModSystem
         BarbarianWeaponRegistry.Register(ModContent.ItemType<TestSword>(),
             new(ThrowProjectile: ModContent.ProjectileType<ThrownTestSword>()));
         SpellbladeWeaponRegistry.Register(ItemID.EnchantedSword, new(100, 30));
-        SpellbladeWeaponRegistry.Register(ItemID.TerraBlade, new(100, 10, true));
+        SpellbladeWeaponRegistry.Register(ItemID.TerraBlade, new(100, 10));
         SpellbladeWeaponRegistry.Register(ItemID.StarWrath, new(100, 10));
+        SpellbladeWeaponRegistry.Register(ItemID.Excalibur, new(100, 10));
+        SpellbladeWeaponRegistry.RegisterProjectile(ProjectileID.Excalibur);
     }
 
     // For now all Vanilla weapons are registered without a throw, perhaps i will add it later on
